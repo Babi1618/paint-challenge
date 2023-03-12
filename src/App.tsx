@@ -1,8 +1,15 @@
 import React from "react";
 import "./App.scss";
+import { Main } from "./components/Main";
+import { Navbar } from "./components/Navbar";
 
 function App() {
-  return <div>Ciao</div>;
+  return (
+    <div>
+      <Navbar />
+      <Main />
+    </div>
+  );
 }
 
 export default App;
