@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import my_brand from "../assets/my_brand.png";
 import { useGlobalContext } from "../context/GlobalContext";
-import CanvasSize from "./CanvasSize";
+import CanvasSizeSelect from "./CanvasSizeSelect";
 
 export const Navbar = () => {
   const { heigth, setHeigth, width, setWidth } = useGlobalContext() as {
@@ -25,10 +25,10 @@ export const Navbar = () => {
       </div>
       <div className="canvas-size">
         <div>
-          <CanvasSize type="heigth" value={heigth} onChange={setHeigth} />
+          <CanvasSizeSelect type="heigth" value={heigth} onChange={setHeigth} />
         </div>
         <div>
-          <CanvasSize type="width" value={width} onChange={setWidth} />
+          <CanvasSizeSelect type="width" value={width} onChange={setWidth} />
         </div>
       </div>
       <div className="reset">

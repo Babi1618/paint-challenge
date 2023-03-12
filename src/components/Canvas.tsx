@@ -1,8 +1,14 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
-const SingleSquare = () => {
-  return <div className="square"></div>;
+const SingleSquare = ({ isClicked }: any) => {
+  const [isClicked2, setIsClicked2] = useState(false);
+  return (
+    <div
+      className={`square ${isClicked2 && "clicked"}`}
+      onMouseDown={() => setIsClicked2((prev) => !prev)}
+    ></div>
+  );
 };
 
 const SingleLine = () => {
@@ -20,7 +26,7 @@ const SingleLine = () => {
         }}
       >
         {[...Array(width)].map((_, i: number) => {
-          return <SingleSquare key={i} />;
+          return <SingleSquare key={i} isClicked={true} />;
         })}
       </div>
     </div>

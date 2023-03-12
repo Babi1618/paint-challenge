@@ -1,7 +1,8 @@
 import * as React from "react";
-const CanvasSize = ({ type, value, onChange }: any) => {
+const CanvaSizeSelect = ({ type, value, onChange }: any) => {
   const handleChange = (e: string) => {
-    onChange(Number(e));
+    const value = Number(e);
+    onChange(value);
   };
   return (
     <div>
@@ -15,4 +16,4 @@ const CanvasSize = ({ type, value, onChange }: any) => {
   );
 };
 
-export default CanvasSize;
+export default CanvaSizeSelect;
