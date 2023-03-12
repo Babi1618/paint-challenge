@@ -8,8 +8,8 @@ import React, {
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = (props: PropsWithChildren) => {
-  const [heigth, setHeigth]=useState<number>(5)
-  const [width, setWidth]=useState<number>(10)
+  const [heigth, setHeigth]=useState<number>(50)
+  const [width, setWidth]=useState<number>(50)
 
   return (
     <GlobalContext.Provider
