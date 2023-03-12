@@ -46,10 +46,9 @@ const Palette = () => {
   return (
     <div className="palette">
       <div className="content">
-        {
-            colorArray.map((el:any ,i:number)=><SingleColorPalette key={i} color={el}/>)
-        }
-
+        {colorArray.map((el: string, i: number) => (
+          <SingleColorPalette key={i} color={el} />
+        ))}
       </div>
     </div>
   );
