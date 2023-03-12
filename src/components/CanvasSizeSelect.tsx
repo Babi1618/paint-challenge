@@ -5,7 +5,7 @@ const CanvaSizeSelect = ({ type, value, onChange }: any) => {
     onChange(value);
   };
   return (
-    <div>
+    <div className="canva-size-select">
       <label>{type}</label>
       <input
         type="number"

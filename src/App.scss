@@ -1,8 +1,21 @@
+/* 
+====== 
+Variables 
+======
+*/
+:root {
+  --primaryLightColor: #b8a5e6;
+  --primaryColor: #44118f;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   height: 60px;
-  border-bottom: 1px solid;
+  // border-bottom: 1px solid;
+  box-shadow: var(--lightShadow);
   padding: 20px 30px;
   .icon {
     display: flex;
@@ -19,17 +32,34 @@
   .canvas-size {
     display: flex;
     gap: 20px;
+    .canva-size-select {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      label {
+        font-size: 10px;
+      }
+      input {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
   }
   .reset {
     display: flex;
     align-items: center;
+
     button {
-      background-color: red;
+      background-color: var(--primaryColor);;
+      border-radius: 10px;
+      font-weight: 600;
       padding: 10px;
       border: none;
+      color: white;
       cursor: pointer;
       &:hover {
-        background-color: pink;
+        background-color: var(--primaryLightColor);
+        color:black
       }
     }
   }
@@ -39,10 +69,11 @@
   display: flex;
   margin: 20px 40px;
   background-color: aliceblue;
+  border-radius: 10px;
   .content {
     padding: 10px;
     display: flex;
-    gap: 8px;
+    gap: 5px;
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
@@ -67,7 +98,6 @@
 
   .single-line {
     display: grid;
-    // grid-template-columns: repeat(3, 30px);
     .square {
       height: 10px;
       width: 10px;
