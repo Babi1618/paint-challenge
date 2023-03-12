@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 const SingleSquare = ({ mouseDown }: any) => {
-  const [isClicked2, setIsClicked2] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const { colorSelected } = useGlobalContext() as any;
 
   const handleColor = () => {
     if (mouseDown) {
-      setIsClicked2(true);
+      setIsClicked(true);
     }
   };
   return (
     <div
       className={`square `}
-      style={{ backgroundColor: `${isClicked2 && colorSelected}` }}
+      style={{ backgroundColor: `${isClicked && colorSelected}` }}
       onMouseOver={() => handleColor()}
     ></div>
   );
