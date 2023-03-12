@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 const SingleSquare = ({ mouseDown }: any) => {
   const [isClicked2, setIsClicked2] = useState(false);
+
+  const { colorSelected } = useGlobalContext() as any;
 
   const handleColor = () => {
     if (mouseDown) {
@@ -11,7 +13,8 @@ const SingleSquare = ({ mouseDown }: any) => {
   };
   return (
     <div
-      className={`square ${isClicked2 && "clicked"}`}
+      className={`square `}
+      style={{ backgroundColor: `${isClicked2 && colorSelected}` }}
       onMouseOver={() => handleColor()}
     ></div>
   );
@@ -43,9 +46,6 @@ const Canvas = () => {
     heigth: number;
   };
   const [mouseDown, setMouseDown] = useState(false);
-  useEffect(() => {
-    console.log("over", mouseDown);
-  }, [mouseDown]);
 
   return (
     <div>
