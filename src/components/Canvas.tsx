@@ -6,7 +6,7 @@ const SingleSquare = ({ isClicked }: any) => {
   return (
     <div
       className={`square ${isClicked2 && "clicked"}`}
-      onMouseDown={() => setIsClicked2((prev) => !prev)}
+      onClick={() => setIsClicked2(true)}
     ></div>
   );
 };
