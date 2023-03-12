@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const SingleSquare = () => {
   return <div className="square"></div>;
@@ -6,16 +7,19 @@ const SingleSquare = () => {
 
 const SingleLine = () => {
   const numberOfColumn = 4;
+  const { width } = useGlobalContext() as {
+    width: number;
+  };
 
   return (
     <div className="canvas">
       <div
         className="single-line"
         style={{
-          gridTemplateColumns: `repeat(${numberOfColumn}, 30px)`,
+          gridTemplateColumns: `repeat(${width}, 30px)`,
         }}
       >
-        {[...Array(numberOfColumn)].map((el: any, i: number) => {
+        {[...Array(width)].map((_, i: number) => {
           return <SingleSquare key={i} />;
         })}
       </div>
@@ -25,10 +29,13 @@ const SingleLine = () => {
 
 const Canvas = () => {
   const numerOfLines = 6;
+  const { heigth } = useGlobalContext() as {
+    heigth: number;
+  };
   return (
     <div>
       <div className="content">
-        {[...Array(numerOfLines)].map((el: any, i: number) => {
+        {[...Array(heigth)].map((_, i: number) => {
           return <SingleLine key={i} />;
         })}
       </div>
