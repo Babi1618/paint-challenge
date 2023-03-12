@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import { colorsArray } from "../utils/colorsArray";
 import SingleColorPalette from "./SingleColorPalette";
@@ -9,10 +9,11 @@ const Palette = () => {
     setColorSelected: any;
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setColorSelected("black");
   }, []);
-  React.useEffect(() => {
+
+  useEffect(() => {
     console.log(colorSelected);
   }, [colorSelected]);
 
