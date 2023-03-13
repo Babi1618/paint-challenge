@@ -48,8 +48,8 @@ const SingleLine = ({ mouseDown }: any) => {
 };
 
 const Canvas = () => {
-  const { heigth } = useGlobalContext() as {
-    heigth: number;
+  const { height } = useGlobalContext() as {
+    height: number;
   };
   const [mouseDown, setMouseDown] = useState(false);
 
@@ -60,7 +60,7 @@ const Canvas = () => {
         onMouseDown={() => setMouseDown(true)}
         onMouseUp={() => setMouseDown(false)}
       >
-        {[...Array(heigth)].map((_, i: number) => {
+        {[...Array(height)].map((_, i: number) => {
           return <SingleLine key={i} mouseDown={mouseDown} />;
         })}
       </div>

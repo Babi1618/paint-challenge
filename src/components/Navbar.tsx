@@ -4,21 +4,16 @@ import { useGlobalContext } from "../context/GlobalContext";
 import CanvasSizeSelect from "./CanvasSizeSelect";
 
 export const Navbar = () => {
-  const { heigth, setHeigth, width, setWidth, setReset, reset } =
+  const { height, setHeight, width, setWidth, setReset, reset } =
     useGlobalContext() as {
-      heigth: string;
-      setHeigth: any;
+      height: string;
+      setHeight: any;
       width: number;
       setWidth: any;
       setReset: any;
       reset: boolean;
     };
 
-  useEffect(() => {
-    console.log("heigth", heigth);
-    console.log("width", width);
-    console.log("reset", reset);
-  }, [heigth, width, reset]);
   return (
     <div className="navbar">
       <div className="icon">
@@ -29,7 +24,7 @@ export const Navbar = () => {
       </div>
       <div className="canvas-size">
         <div>
-          <CanvasSizeSelect type="heigth" value={heigth} onChange={setHeigth} />
+          <CanvasSizeSelect type="height" value={height} onChange={setHeight} />
         </div>
         <div>
           <CanvasSizeSelect type="width" value={width} onChange={setWidth} />
