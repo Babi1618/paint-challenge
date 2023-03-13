@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import my_brand from "../assets/my_brand.png";
 import { useGlobalContext } from "../context/GlobalContext";
 import CanvasSizeSelect from "./CanvasSizeSelect";
 
 export const Navbar = () => {
-  const { height, setHeight, width, setWidth, setReset, reset } =
+  const { height, setHeight, width, setWidth, setReset } =
     useGlobalContext() as {
       height: string;
-      setHeight: any;
+      setHeight: any; 
       width: number;
       setWidth: any;
       setReset: any;

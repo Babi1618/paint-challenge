@@ -4,18 +4,13 @@ import { colorsArray } from "../utils/colorsArray";
 import SingleColorPalette from "./SingleColorPalette";
 
 const Palette = () => {
-  const { colorSelected, setColorSelected } = useGlobalContext() as {
-    colorSelected: string;
+  const { setColorSelected } = useGlobalContext() as {
     setColorSelected: any;
   };
 
   useEffect(() => {
     setColorSelected("black");
   }, []);
-
-  useEffect(() => {
-    console.log(colorSelected);
-  }, [colorSelected]);
 
   return (
     <div className="palette">

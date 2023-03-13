@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
-const SingleSquare = ({ mouseDown }: any) => {
+const SingleSquare = ({ mouseDown }: SingleSquareOrLineType) => {
   const [singleSquareColor, setSingleSquareColor] = useState("");
-  const { colorSelected, reset } = useGlobalContext() as any;
+  const { colorSelected, reset } = useGlobalContext() as {
+    colorSelected: string;
+    reset: boolean;
+  };
 
   const handleColor = () => {
     if (mouseDown) {
@@ -11,22 +14,21 @@ const SingleSquare = ({ mouseDown }: any) => {
     }
   };
   useEffect(() => {
-    console.log(reset);
-    if(reset){
-      setSingleSquareColor("")
+    if (reset) {
+      setSingleSquareColor("");
     }
   }, [reset]);
 
   return (
     <div
-      className={`square `}
+      className={`square`}
       style={{ backgroundColor: `${singleSquareColor}` }}
       onMouseOver={() => handleColor()}
     ></div>
   );
 };
 
-const SingleLine = ({ mouseDown }: any) => {
+const SingleLine = ({ mouseDown }: SingleSquareOrLineType) => {
   const { width } = useGlobalContext() as {
     width: number;
   };
@@ -51,7 +53,7 @@ const Canvas = () => {
   const { height } = useGlobalContext() as {
     height: number;
   };
-  const [mouseDown, setMouseDown] = useState(false);
+  const [mouseDown, setMouseDown] = useState<boolean>(false);
 
   return (
     <div>
@@ -68,3 +70,7 @@ const Canvas = () => {
   );
 };
 export default Canvas;
+
+type SingleSquareOrLineType = {
+  mouseDown: boolean;
+};

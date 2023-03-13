@@ -1,5 +1,5 @@
-import * as React from "react";
-const CanvaSizeSelect = ({ type, value, onChange }: any) => {
+import React from "react";
+const CanvaSizeSelect = ({ type, value, onChange }: CanvaSizeSelectType) => {
   const handleChange = (e: string) => {
     const value = Number(e);
     onChange(value);
@@ -17,3 +17,9 @@ const CanvaSizeSelect = ({ type, value, onChange }: any) => {
 };
 
 export default CanvaSizeSelect;
+
+type CanvaSizeSelectType = {
+  type: string;
+  value: string | number;
+  onChange: any;
+};
